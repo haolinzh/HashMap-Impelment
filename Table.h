@@ -50,7 +50,7 @@ public:
     // insert a new pair into the table
     // return false iff this key was already present
     //         (and no change made to table)
-    bool insert(string *key, int value);
+    bool insert(string &key, int value);
 
     // returns the address of the value or NULL if key is not present
     int *lookup(const string &key);

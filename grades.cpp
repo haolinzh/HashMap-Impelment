@@ -66,9 +66,10 @@ int main(int argc, char *argv[]) {
             cin >> name;
             cin >> score;
             if(grades->lookup(name)==NULL){
-                grades->insert(&name,score);
+                grades->insert(name,score);
             } else{
                 cout << "The student has already existed"<< endl;
+
             }
             cout << "cmd>";
             continue;
@@ -79,7 +80,7 @@ int main(int argc, char *argv[]) {
             cin >> name;
             cin >> score;
             if(grades->remove(name)){
-                grades->insert(&name,score);
+                grades->insert(name,score);
             } else{
                 cout << "The student is not existed"<< endl;
             }

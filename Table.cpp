@@ -69,9 +69,9 @@ bool Table::remove(const string &key) {
 
 }
 
-bool Table::insert(string *key, int value) {
-   int bucket=hashCode(*key);
-    if(listInsert(table[bucket],*key,value)){
+bool Table::insert(string & key, int value) {
+   int bucket=hashCode(key);
+    if(listInsert(table[bucket],key,value)){
         entryNum++;
         return 1;
     } else{
