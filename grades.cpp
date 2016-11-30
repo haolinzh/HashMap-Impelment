@@ -1,5 +1,5 @@
-// Name:
-// Loginid:
+// Name: Haolin Zhang
+// Loginid: haolinzh
 // CSCI 455 PA5
 // Fall 2016
 
@@ -19,6 +19,7 @@
 
 // cstdlib needed for call to atoi
 #include <cstdlib>
+
 void printCommandSum();
 
 
@@ -59,16 +60,16 @@ int main(int argc, char *argv[]) {
 
     cout << "cmd>";
 
-
-    while (flag){
+//Using while loop to read command and data util we input quit
+    while (flag) {
         cin >> cmd;
-        if(cmd=="insert"){
+        if (cmd == "insert") {
             cin >> name;
             cin >> score;
-            if(grades->lookup(name)==NULL){
-                grades->insert(name,score);
-            } else{
-                cout << "The student has already existed"<< endl;
+            if (grades->lookup(name) == NULL) {
+                grades->insert(name, score);
+            } else {
+                cout << "The student has already existed" << endl;
 
             }
             cout << "cmd>";
@@ -76,68 +77,68 @@ int main(int argc, char *argv[]) {
         }
 
 
-        if(cmd=="change"){
+        if (cmd == "change") {
             cin >> name;
             cin >> score;
-            if(grades->remove(name)){
-                grades->insert(name,score);
-            } else{
-                cout << "The student is not existed"<< endl;
+            if (grades->remove(name)) {
+                grades->insert(name, score);
+            } else {
+                cout << "The student is not existed" << endl;
             }
             cout << "cmd>";
             continue;
         }
 
 
-        if (cmd=="lookup"){
+        if (cmd == "lookup") {
             cin >> name;
 
-            if (grades->lookup(name)!=NULL){
-                cout << "The score of "<< name <<" is "<<*(grades->lookup(name));
-            } else{
-                cout << "The student is not existed"<< endl;
+            if (grades->lookup(name) != NULL) {
+                cout << "The score of " << name << " is " << *(grades->lookup(name)) << endl;
+            } else {
+                cout << "The student is not existed" << endl;
             }
             cout << "cmd>";
             continue;
         }
 
 
-        if(cmd=="remove"){
+        if (cmd == "remove") {
             cin >> name;
-            if(!grades->remove(name)){
-                cout << "The student is not existed"<< endl;
+            if (!grades->remove(name)) {
+                cout << "The student is not existed" << endl;
             }
             cout << "cmd>";
             continue;
         }
 
-        if(cmd=="print"){
+        if (cmd == "print") {
             grades->printAll();
             cout << "cmd>";
             continue;
         }
 
-        if(cmd=="size"){
-            cout<<grades->numEntries();
+        if (cmd == "size") {
+            cout << grades->numEntries() << endl;
             cout << "cmd>";
             continue;
         }
 
-        if(cmd=="stats"){
+        if (cmd == "stats") {
             grades->hashStats(cout);
             cout << "cmd>";
             continue;
         }
 
-        if(cmd=="help"){
+        if (cmd == "help") {
             printCommandSum();
             cout << "cmd>";
             continue;
 
         }
 
-        if(cmd=="quit"){
-            flag=false;
+        if (cmd == "quit") {
+            flag = false;
             continue;
         }
 
@@ -151,16 +152,16 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-
-void printCommandSum(){
-    cout<<"Please Follow the folling command format"<<endl;
-    cout<<"insert name score"<<endl;
-    cout<<"change name newscore"<<endl;
-    cout<<"lookup name"<<endl;
-    cout<<"remove name"<<endl;
-    cout<<"print"<<endl;
-    cout<<"size"<<endl;
-    cout<<"stats"<<endl;
-    cout<<"help"<<endl;
-    cout<<"quit"<<endl;
+//Print the commands sum to instruct user input
+void printCommandSum() {
+    cout << "Please Follow the folling command format" << endl;
+    cout << "insert name score" << endl;
+    cout << "change name newscore" << endl;
+    cout << "lookup name" << endl;
+    cout << "remove name" << endl;
+    cout << "print" << endl;
+    cout << "size" << endl;
+    cout << "stats" << endl;
+    cout << "help" << endl;
+    cout << "quit" << endl;
 }

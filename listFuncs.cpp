@@ -1,9 +1,9 @@
-// Name:
-// Loginid:
+// Name: Haolin Zhang
+// Loginid: haolinzh
 // CSCI 455 PA5
 // Fall 2016
 
-
+// ListFuncs.cpp  list class implementation
 #include <iostream>
 
 #include <cassert>
@@ -27,15 +27,17 @@ Node::Node(const string &theKey, int theValue, Node *n) {
 
 //*************************************************************************
 // put the function definitions for your list functions below
+
+//Print the list
 void listPrint(ListType list) {
     ListType tmp = list;
     while (tmp != NULL) {
-        cout  << tmp->key << " " << tmp->value << endl;
+        cout << tmp->key << " " << tmp->value << endl;
         tmp = tmp->next;
     }
 }
 
-
+//Return the list size
 int listSize(ListType list) {
     ListType tmp = list;
     int count = 0;
@@ -46,7 +48,7 @@ int listSize(ListType list) {
     return count;
 }
 
-
+//Check whether the list contains contain keys
 bool listContainsKey(ListType list, string target) {
     ListType tmp = list;
     while (tmp != NULL) {
@@ -58,7 +60,8 @@ bool listContainsKey(ListType list, string target) {
     return 0;
 }
 
-int* listLookUp(ListType list, string target) {
+//Look up the target string in specific list
+int *listLookUp(ListType list, string target) {
     ListType tmp = list;
     while (tmp != NULL) {
         if (tmp->key == target) {
@@ -72,6 +75,7 @@ int* listLookUp(ListType list, string target) {
 
 }
 
+//Insert key-value pair in specific list
 bool listInsert(ListType &list, string target, int value) {
     if (listContainsKey(list, target)) {
         return 0;
@@ -93,7 +97,7 @@ bool listInsert(ListType &list, string target, int value) {
 }
 
 
-
+//Remove target in specific list
 bool listRemove(ListType &list, string target) {
     if (!listContainsKey(list, target)) {
         return 0;
@@ -112,8 +116,8 @@ bool listRemove(ListType &list, string target) {
             pre->next = cur->next;
             return 1;
         }
-        pre=cur;
-        cur=cur->next;
+        pre = cur;
+        cur = cur->next;
     }
 
     return 0;

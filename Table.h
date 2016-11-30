@@ -1,5 +1,5 @@
-// Name:
-// Loginid:
+// Name: Haolin Zhang
+// Loginid: haolinzh
 // CSCI 455 PA5
 // Fall 2016
 

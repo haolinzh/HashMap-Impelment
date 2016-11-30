@@ -1,5 +1,5 @@
-// Name:
-// Loginid:
+// Name: Haolin Zhang
+// Loginid: haolinzh
 // CSCI 455 PA5
 // Fall 2016
 
@@ -45,8 +45,6 @@ bool listContainsKey(ListType list, string target);
 int* listLookUp(ListType list, string target);
 
 bool listInsert(ListType &list, string target, int value);
-
-bool listUpdate(ListType &list, string target, int value);
 
 bool listRemove(ListType &list, string target);
 
